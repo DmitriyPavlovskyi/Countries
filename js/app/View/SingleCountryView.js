@@ -1,10 +1,10 @@
 var SingleCountryView = Backbone.View.extend({
 	tagName: 'div',
 
-	compiled: _.template('<%= name %><button>Show info</button>'),
+	compiled: _.template(`<%= name %><button class = "show-info">Show info</button>`),
 
 	events: {
-		'click button': 'showInfo'
+		'click button.show-info': 'showInfo'
 	},
 
 	initialize: function () {

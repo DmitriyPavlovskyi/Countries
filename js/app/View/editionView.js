@@ -1,26 +1,27 @@
 var EditionView = Backbone.View.extend({
-	tagName: 'div',
+	// tagName: 'div',
+	el: '#countryEdition',
 
 	compiled: _.template(`<div>Fill the form for new country:</div>
-							<input placeholder = "Country name"><input placeholder = "Capital">
+							<input placeholder = "Country name">
+							<input placeholder = "Capital">
 							<input placeholder = "Population">
-							<button class = "createCountry">Create new country</button>`),
-	
+							<button class = "create-country">Create new country</button>`),
 
+	events: {
+		'click .create-country': 'createCountry'
+	},
 
 	initialize: function () {
-		console.log($('.createCountry').length);
 	},
 
 	render: function () {
-		$('#countryEdition').append(this.compiled());
-		console.log($('.createCountry').length);
+		// $('#countryEdition').append(this.compiled());
+		this.$el.html(this.compiled());
+
 		return this;
 	},
 
-	events: {
-		'click .createCountry': 'createCountry'
-	},
 	createCountry: function () {
 		debugger;
 		console.log('wefwe');

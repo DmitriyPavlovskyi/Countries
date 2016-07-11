@@ -2,10 +2,14 @@ var CountryInformationView = Backbone.View.extend({
 	// tagName: 'div',
 	// className: 'current'
 
-	compiled: _.template('Country name: <span class = "current"><%= name %></span><br> Capital: <%= capital %><br>Population: <%= population %><button>Delete country</button>'),
+	compiled: _.template(`Country name: <span class = "current">
+							<%= name %></span> <br> 
+							Capital: <%= capital %> <br>
+							Population: <%= population %>
+							<button class = "delete-country">Delete country</button>`),
 
 	events: {
-		'click button': 'removeCountry'
+		'click button.delete-country': 'removeCountry'
 	},
 
 	initialize: function () {
@@ -20,6 +24,5 @@ var CountryInformationView = Backbone.View.extend({
 	removeCountry: function () {
 		this.$el.html('');
 		this.model.destroy();
-		// this.model.clear();
 	}
 });

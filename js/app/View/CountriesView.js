@@ -12,7 +12,7 @@ var CountriesView = Backbone.View.extend({
 	},
 
 	render: function () {
-		this.$el.html('<button class = "start">Show Countries</button>');
+		this.$el.html(`<button class = "start">Show Countries</button>`);
 
 		return this;
 	},
